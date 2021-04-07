@@ -9,6 +9,7 @@ RUN rm src/*.rs
 ADD . ./
 
 RUN rm ./target/release/deps/*
+RUN cargo build --release
 
 FROM debian:buster-slim
 ARG APP=/usr/src/app

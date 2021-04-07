@@ -8,4 +8,3 @@ edition = "2018"
 
 [dependencies]
 redis = { version = "0.20.0", features = [ "cluster"] }
-r2d2_redis_cluster = "0.1.6"
