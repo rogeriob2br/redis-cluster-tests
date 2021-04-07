@@ -1,14 +1,9 @@
 FROM rust as builder
 
-RUN USER=root cargo new --bin redis-cluster-tests
-WORKDIR ./redis-cluster-tests
-COPY ./Cargo.toml ./Cargo.toml
-RUN cargo build --release
-RUN rm src/*.rs
 
+WORKDIR ./redis-cluster-tests
 ADD . ./
 
-RUN rm ./target/release/deps/*
 RUN cargo build --release
 
 FROM debian:buster-slim
